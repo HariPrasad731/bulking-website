@@ -3,7 +3,7 @@ import { FiHeart, FiShoppingCart, FiCheck } from "react-icons/fi";
 import { useState } from "react";
 
 import SignupModal from "../auth/SignupModal";
-import LoginModal from "../auth/LoginModal"; // ✅ make sure this file exists
+import LoginModal from "../auth/LoginModal";
 
 export default function Header() {
   const { pathname } = useLocation();
@@ -17,12 +17,15 @@ export default function Header() {
 
   return (
     <>
+      {/* ✅ STICKY HEADER */}
       <header
-        className={`${
-          isWhiteHeader
-            ? "bg-white text-gray-900 border-b"
-            : "bg-[#0B4DBA] text-white"
-        }`}
+        className={`
+          sticky top-0 z-50
+          ${isWhiteHeader
+            ? "bg-white/95 text-gray-900 border-b backdrop-blur"
+            : "bg-[#0B4DBA]/95 text-white backdrop-blur"
+          }
+        `}
       >
         <div className="max-w-[1280px] mx-auto flex items-center justify-between px-8 py-4">
 
